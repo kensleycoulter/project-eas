@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="uft-8">
+    <title>etch-a-sketch</title>
+    <script src="../project-eas/script.js" defer></script>
+    <link rel="stylesheet" href="../project-eas/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+       <div class="title"><h1>etch-a-sketch</h1></div>
+        <div class="content">
+            <div class="board"></div>
+            <div class="buttons">
+                <input id="color-picker" class="user-color" type="color">
+                <button onclick="changeColor('black')">black</button>
+                <button onclick="changeColor('rainbow')">rainbow</button>
+                <button onclick="changeColor('white')">erase</button>
+                <button onclick="clearBoard()">clear</button>
+          </div>
+            <div class="slider-container">slider
+                <div class="size-value"></div>
+                <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
+            </div>
+      </div>
+    </div>
+    
+
+
+
+
+</body>
+
+
+
+</html>
