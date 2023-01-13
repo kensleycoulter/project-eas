@@ -6,15 +6,16 @@ let click = true;
 let size;
 
 let colorPicker = document.querySelector('#color-picker');
+colorPicker.addEventListener('input', userColorSelection);
 
 let slider = document.querySelector('.slider');
 let sizeValue = document.querySelector('.size-value');
 slider.addEventListener('mouseup', changeSize);
-sizeValue.innerHTML = `${defaultSize} X ${defaultSize}`;
+sizeValue.innerHTML = `${defaultSize} x ${defaultSize}`;
 
 slider.oninput = function getOutputValue () {
     updatedGridSize = this.value 
-    sizeValue.innerHTML = `${updatedGridSize} X ${updatedGridSize}`
+    sizeValue.innerHTML = `${updatedGridSize} x ${updatedGridSize}`
      } 
 
 console.log(color);
@@ -41,7 +42,7 @@ let squares = board.querySelectorAll('div');
 squares.forEach((div) => div.remove());
 board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-board.style.boxShadow = '5px 5px 5px 5px grey';
+//board.style.boxShadow = '5px 5px 5px 5px grey';
 
 /*slider.addEventListener('input', function ()  {
     gridSize = output.innerHTML * output.innerHTML; 
@@ -53,7 +54,7 @@ for(let i = 0; i < gridSize; i++) {
     let square = document.createElement('div');
     square.addEventListener('mouseover', colorSquare);
     square.classList.add('square');
-    square.style.backgroundColor = 'white';
+    square.style.backgroundColor = '#fbf7f5';
     board.insertAdjacentElement('beforeend', square);
     
   }
@@ -103,6 +104,7 @@ function userColorSelection(event){
     console.log(newColor)
 } */
 
+
 function reloadGrid () {
     clearBoard();
     createBoard(size);
@@ -111,12 +113,25 @@ function reloadGrid () {
 function clearBoard () {
     const board = document.querySelector('.board');
     let squares = board.querySelectorAll('div');
-    squares.forEach((div) => div.style.backgroundColor = 'white');
+    squares.forEach((div) => div.style.backgroundColor = '#fbf7f5');
 }
 
 document.querySelector('.board').addEventListener('click', () => {
     click = !click;
 })
+
+let buttons = document.querySelectorAll('.btn');
+buttons.forEach(button => {
+  button.addEventListener('click', handleButtonClick);
+});
+
+function handleButtonClick(event) {
+    buttons.forEach(button => {
+      button.classList.remove('selected');
+    });
+    event.target.classList.add('selected');
+  }
+  
 
 
 window.onload = () => {

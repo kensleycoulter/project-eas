@@ -11,28 +11,28 @@
 <body>
     <div class="container">
        <div class="title"><h1>etch-a-sketch</h1></div>
+       <div class="sub-title"><i>click board to toggle paint on and off</i></div>
         <div class="content">
             <div class="board"></div>
-            <div class="buttons">
-                <input id="color-picker" class="user-color" type="color">
-                <button onclick="changeColor('black')">black</button>
-                <button onclick="changeColor('rainbow')">rainbow</button>
-                <button onclick="changeColor('white')">erase</button>
-                <button onclick="clearBoard()">clear</button>
-          </div>
-            <div class="slider-container">slider
+               <div class="settings">
+                <div class="buttons">
+                    <input id="color-picker" class="user-color btn" type="color" value="#34685c" >
+                    <button class="btn" onclick="changeColor('black')">black</button>
+                    <button class="btn" onclick="changeColor('rainbow')">rainbow</button>
+                    <button class="btn" onclick="changeColor('#fbf7f5')">erase</button>
+                    <button onclick="clearBoard()">clear</button>
+                </div>
+                <div class="slider-container">
                 <div class="size-value"></div>
                 <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
             </div>
+        </div>
       </div>
     </div>
     
 
 
-
-
 </body>
-
 
 
 </html>
